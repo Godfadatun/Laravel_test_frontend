@@ -1,6 +1,7 @@
 <template>
   <q-page class="">
-    <Index />
+    <Payment/>
+    <!-- <Transaction /> -->
   </q-page>
 
 </template>
@@ -10,12 +11,16 @@
 
 <script>
 // import Home from '../components/HelloWorld'
-import Index from '../components/Index'
+// import Index from '../components/Index'
+// import Transaction from '../components/transaction'
+import Payment from '../components/payment'
 export default {
   // name: 'HelloWorld',
   components: {
     // Home,
-    Index,
+    // Index,
+    Payment,
+    // Transaction
   },
   data() {
     return {}

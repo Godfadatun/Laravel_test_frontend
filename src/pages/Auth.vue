@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-center">
-    <Login v-if="theroute == 'login'" />
-    <Register v-if="theroute == 'register'" />
+    <div class="column flex-center">
+      <Login v-if="theroute == 'login'" />
+      <Register v-if="theroute == 'register'" />
+    </div>
   </div>
 </template>
 

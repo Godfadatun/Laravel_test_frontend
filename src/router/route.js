@@ -6,8 +6,8 @@ const routes = [
     children: [
       { path: '', name: 'login', component: () => import('../pages/Auth.vue') },
       { path: 'register', name: 'register', component: () => import('../pages/Auth.vue') },
-      { path: 'home', name: 'index', component: () => import('../pages/Index.vue') },
-      // { path: 'people', name: 'people', component: () => import('../pages/People.vue') },
+      { path: 'home', name: 'home', component: () => import('../pages/Index.vue'), props: true },
+      { path: 'transaction', name: 'transaction', component: () => import('../pages/Transaction.vue') },
       // { path: 'ships', name: 'ships', component: () => import('../pages/Ships.vue') },
       // { path: 'details', name: 'details', component: () => import('../pages/Details.vue'), props:true },
     ]

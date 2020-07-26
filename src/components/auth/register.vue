@@ -7,7 +7,7 @@
         <q-btn class="text-h4" to="/" flat dense stack no-caps label="Billisimo"/>
       </div>
         <q-card-section class="q-gutter-sm">
-        <div v-if="error" class="text-red">PIN Issues</div>
+        <!-- <div v-if="error" class="text-red">PIN Issues</div> -->
         <q-input outlined dense rounded type="email" v-model="form.name" label="Enter Your Name" >
           <template v-slot:prepend >
             <div class="row flex-center">
@@ -95,16 +95,7 @@ export default {
 
       .then(response => {
         console.log('response: ', response)
-        // this.thedata = response;
-        // this.$q.localStorage.set('branchless_token', response.data.token)
-        // this.$q.localStorage.set('branchless_is_agent', response.data.data.agent)
-        // this.$q.localStorage.set('branchless_is_subscribed', response.data.data.subscribed)
-        // this.$axios.defaults.headers.common["Authorization"] = response.data.token
-        // this.$q.notify({message: 'Login successful', color: 'green'})
-        // this.$store.commit('Auth/login', response.data.token)
-        // this.$store.commit('Auth/is_agent', response.data.data.agent)
-        // this.$store.commit('Auth/is_subscribed', response.data.data.subscribed)
-        // this.getUser(response.data.data)
+        this.$router.push({name: 'login'});
       })
       .catch(error=>{
         if (error.response) {
@@ -118,34 +109,10 @@ export default {
           console.log('Error', error.message);
         }
       })
-    }},
+    }
+  },
 
-    // async getUser(agencySub){
-    //   this.$axios.get('https://branchless.world/branposdev01/user/userDetails')
-    //    .then(response => {
-    //     this.$store.dispatch("Auth/thebanklist");
-    //     this.$store.commit('Auth/user', response.data.data)
-    //     if (agencySub.agent && !agencySub.subscribed) {
-    //       this.$router.push({name: 'agentsub'})
-    //     }else this.$router.push({name: 'dashboard'});
-    //     // this.$router.push({name: 'dashboard'});
-    //   })
-    //   .catch(error=>{
-    //     console.log('err: ', error)
-    //     if (error.response) {
-    //       // Request made and server responded
-    //       console.log(error.response.data);
-    //       console.log(error.response.status);
-    //       console.log(error.response.headers);
-    //     } else if (error.request) {
-    //       // The request was made but no response was received
-    //       console.log(error.request);
-    //     } else {
-    //       // Something happened in setting up the request that triggered an Error
-    //       console.log('Error', error.message);
-    //     }
-    //   })
-    // }
+
   },
 }
 </script>
